@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 const BotArmy = ({ bot }) => {
   return (
     <div>
-      {/* <div className="botCollection">{botArmyCards}</div> */}
       <div>
         <div key={bot.id} class="container container_Army">
           <div class="container__info">
@@ -18,7 +17,7 @@ const BotArmy = ({ bot }) => {
             </span>
           </div>
           <h2 id="botName">{bot.name}</h2>
-          <div class="container__profile  ">
+          <div class="container__profile__Army  ">
             <img src={bot.avatar_url} alt="people" />
           </div>
         </div>

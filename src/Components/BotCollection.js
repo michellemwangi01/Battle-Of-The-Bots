@@ -31,7 +31,9 @@ const BotCollection = () => {
       noDuplicateBotsWarning(botArmyItem.name);
     }
   }
-  console.log(botArmy);
+
+  const randomNum = Math.floor(Math.random() * 100) + 1;
+
   useEffect(() => {
     fetch(`http://localhost:4000/bots`)
       .then((res) => res.json())
@@ -46,8 +48,8 @@ const BotCollection = () => {
 
   return (
     <div>
-      <div>
-        <h1 id="BotCollectionTitle">The Bot Army</h1>
+      <div className="armyBotsContainer">
+        <h1 id="BATTLEOFTHEBOTS">BATTLE OF THE BOTS</h1>
         <div className="botArmy">{botArmyCards}</div>
       </div>
       <div>
