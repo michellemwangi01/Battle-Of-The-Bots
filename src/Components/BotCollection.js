@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from "react";
+import BotArmy from "./BotArmy";
+import BotCard from "./BotCard";
 
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
+  const [addToArmyID, setAddToArmyID] = useState();
+  const [botArmy, setBotArmy] = useState([]);
 
+  function addToArmy(botId) {
+    const botArmyItem = botData.find((bot) => bot.id == botId);
+    const matchingBot = botArmy.find((bot) => bot.id == botArmyItem.id);
+    if (!matchingBot) {
+      let updatedArmy = [...botArmy, botArmyItem];
+      setBotArmy(updatedArmy);
+    }
+  }
+  console.log(botArmy);
   useEffect(() => {
     fetch(`http://localhost:4000/bots`)
       .then((res) => res.json())
@@ -10,33 +23,17 @@ const BotCollection = () => {
   }, []);
 
   const botCards = botData.map((bot) => (
-    <div class="container">
-      <div class="container__info">
-        <span>
-          <i class="fas fa-eye"></i> {bot.armor}3
-        </span>
-        <span>
-          <i class="fas fa-comment-alt"></i> {bot.health}2
-        </span>
-        <span>
-          <i class="fas fa-download"></i> {bot.damage}1
-        </span>
-      </div>
-      <di class="container__profile">
-        <img src={bot.avatar_url} alt="people" />
-        <div class="container__profile__text">
-          <h2>Name: {bot.name}</h2>
-          <p>
-            <b>{bot.catchphrase}</b>
-          </p>
-        </div>
-      </di>
-    </div>
+    <BotCard
+      onAddToArmy={addToArmy}
+      // setAddToArmyID={setAddToArmyID}
+      key={bot.id}
+      bot={bot}
+    />
   ));
 
-  console.log(botData);
   return (
     <div>
+      <BotArmy addToArmyID={addToArmyID} botData={botData} />
       <h1 id="BotCollectionTitle">The Bot Collection</h1>
       <div className="botCollection">{botCards}</div>
     </div>

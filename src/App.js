@@ -6,7 +6,6 @@ import BotArmy from "./Components/BotArmy";
 function App() {
   return (
     <div className="App">
-      <BotArmy />
       <BotCollection />
     </div>
   );
