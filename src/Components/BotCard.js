@@ -22,7 +22,7 @@ const BotCard = ({ bot, onAddToArmy }) => {
             <i class="fas fa-download"></i> {bot.damage}1
           </span>
         </div>
-        <di class="container__profile">
+        <div class="container__profile">
           <img src={bot.avatar_url} alt="people" />
           <div class="container__profile__text">
             <h2>Name: {bot.name}</h2>
@@ -33,7 +33,7 @@ const BotCard = ({ bot, onAddToArmy }) => {
               Enlist
             </button>
           </div>
-        </di>
+        </div>
       </div>
     </div>
   );

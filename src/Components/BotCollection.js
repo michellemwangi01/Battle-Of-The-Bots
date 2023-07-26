@@ -39,19 +39,21 @@ const BotCollection = () => {
   }, []);
 
   const botCards = botData.map((bot) => (
-    <BotCard
-      onAddToArmy={addToArmy}
-      // setAddToArmyID={setAddToArmyID}
-      key={bot.id}
-      bot={bot}
-    />
+    <BotCard onAddToArmy={addToArmy} key={bot.id} bot={bot} />
   ));
+
+  const botArmyCards = botArmy.map((bot) => <BotArmy key={bot.id} bot={bot} />);
 
   return (
     <div>
-      <BotArmy addToArmyID={addToArmyID} botData={botData} />
-      <h1 id="BotCollectionTitle">The Bot Collection</h1>
-      <div className="botCollection">{botCards}</div>
+      <div>
+        <h1 id="BotCollectionTitle">The Bot Army</h1>
+        <div className="botArmy">{botArmyCards}</div>
+      </div>
+      <div>
+        <h1 id="BotCollectionTitle">The Bot Collection</h1>
+        <div className="botCollection">{botCards}</div>
+      </div>
     </div>
   );
 };

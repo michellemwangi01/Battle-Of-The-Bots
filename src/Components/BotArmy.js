@@ -1,10 +1,28 @@
 import React, { useEffect, useState } from "react";
 
-const BotArmy = ({ botData, addToArmyID }) => {
+const BotArmy = ({ bot }) => {
   return (
     <div>
-      <h1 id="BotCollectionTitle">The Bot Army</h1>
       {/* <div className="botCollection">{botArmyCards}</div> */}
+      <div>
+        <div key={bot.id} class="container container_Army">
+          <div class="container__info">
+            <span>
+              <i class="fas fa-eye"></i> {bot.armor}3
+            </span>
+            <span>
+              <i class="fas fa-comment-alt"></i> {bot.health}2
+            </span>
+            <span>
+              <i class="fas fa-download"></i> {bot.damage}1
+            </span>
+          </div>
+          <h2 id="botName">{bot.name}</h2>
+          <div class="container__profile  ">
+            <img src={bot.avatar_url} alt="people" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

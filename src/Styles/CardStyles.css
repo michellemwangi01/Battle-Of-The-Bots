@@ -97,7 +97,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
   margin: auto;
 }
 #BotCollectionTitle {
@@ -107,11 +107,34 @@ body {
   font-size: 3rem;
 }
 .enlist {
-  width: 90px;
-  padding: 10px;
-  border: 1px solid white;
-  color: white;
+  width: 60px;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0%;
+  border: none;
+  border-bottom: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   font-size: 1.3rem;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: var(--secondary-color);
+  background-color: transparent;
+}
+.botArmy {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #08234c;
+}
+.container_Army {
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  height: 400px;
+}
+.container__profileArmy {
+  height: 2rem;
+}
+#botName {
+  color: white;
+  margin-top: 0.5rem;
 }
