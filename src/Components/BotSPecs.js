@@ -7,11 +7,9 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
     armor,
     bot_class,
     catchphrase,
-    created_at,
     damage,
     health,
     name,
-    updated_at,
   } = selectedBot[0];
 
   function backToCollection() {
@@ -47,12 +45,13 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
                   </p>
                 </div>
                 <span class="projcard-tag">
-                  {" "}
                   <p className="botDeets">Health: {health}</p>
                 </span>
                 <span class="projcard-tag">
-                  {" "}
                   <p className="botDeets">Damage: {damage}</p>
+                </span>
+                <span class="projcard-tag">
+                  <p className="botDeets">Armor: {armor}</p>
                 </span>
               </div>
             </div>

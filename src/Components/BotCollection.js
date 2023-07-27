@@ -4,6 +4,7 @@ import BotCard from "./BotCard";
 import { toast } from "react-toastify";
 import _ from "lodash";
 import BotSPecs from "./BotSPecs";
+import BotFilter from "./BotFilter";
 
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
@@ -54,7 +55,7 @@ const BotCollection = () => {
     setSelectedBot(selectedBot);
   }
 
-  console.log(viewBotDetailsBool);
+  //console.log(viewBotDetailsBool);
   useEffect(() => {
     fetch(`http://localhost:4000/bots`)
       .then((res) => res.json())
@@ -104,12 +105,17 @@ const BotCollection = () => {
         <h1 id="BATTLEOFTHEBOTS">BATTLE OF THE BOTS</h1>
         <div className="botArmy">{botArmyCards}</div>
       </div>
+
       <div>
         {viewBotDetailsBool ? (
           <h1 id="BotCollectionTitle"> Bot Specifications</h1>
         ) : (
           <h1 id="BotCollectionTitle"> The Bot Collection</h1>
         )}
+        <div id="filterContainer">
+          <BotFilter botData={botData} setBotData={setBotData} />
+          <p>Count: {botData.length}</p>
+        </div>
         {viewBotDetailsBool ? (
           <div className="botCollection">
             <BotSPecs

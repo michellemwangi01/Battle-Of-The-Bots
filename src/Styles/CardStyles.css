@@ -59,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.7);
-    height: 150px;
+    height: 130px;
     flex-wrap: wrap;
     word-break: break-all;
     align-items: center;
@@ -94,11 +94,50 @@ body {
 em {
   font-weight: 900;
 }
+.botClassCheckboxFilter {
+  transform: scale(1.9);
+  background-color: black;
+  border: white 1px solid;
+  margin: 10px;
+}
+label {
+  font-size: 20px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#submitFilter {
+  padding: 5px;
+  width: 5rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+}
 #closeSpecs {
   position: absolute;
   top: -320%;
   right: -25px;
   z-index: 10;
+}
+#filterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+#filterContainer p {
+  color: white;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: white;
+  color: var(--secondary-color);
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 15px;
 }
 .botCollection {
   display: flex;
@@ -111,6 +150,7 @@ em {
 }
 #BotCollectionTitle,
 #BATTLEOFTHEBOTS {
+  text-decoration: underline;
   color: white;
   font-family: cursive;
   font-style: italic;
@@ -118,6 +158,7 @@ em {
 }
 #BotCollectionTitle {
   margin-top: 5rem;
+  text-decoration: none;
 }
 .enlist {
   width: auto;
@@ -277,15 +318,15 @@ body {
 .projcard:hover .projcard-img {
   transform: scale(1.05) rotate(1deg);
 }
-.projcard:hover .projcard-bar {
+/* .projcard:hover .projcard-bar {
   width: 50px;
-}
+} */
 .projcard-textbox {
   position: absolute;
   top: 7%;
   bottom: 7%;
   left: 430px;
-  width: calc(100% - 470px);
+  width: calc(100% - 435px);
   font-size: 17px;
 }
 .projcard:nth-child(2n) .projcard-textbox {
@@ -302,7 +343,7 @@ body {
   top: -20%;
   left: -55px;
   height: 140%;
-  width: 60px;
+  width: 45px;
   transform: rotate(8deg);
 }
 .projcard:nth-child(2n) .projcard-textbox::before {
