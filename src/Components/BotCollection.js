@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import BotArmy from "./BotArmy";
 import BotCard from "./BotCard";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import _ from "lodash";
 
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
-  const [addToArmyID, setAddToArmyID] = useState();
   const [botArmy, setBotArmy] = useState([]);
+  // const shuffledbots = _.shuffle(botData); //Randomize bot order using 1. import _ from 'lodash'; 2.const shuffledArray = _.shuffle(myArray);
 
-  const noDuplicateBotsWarning = (name) =>
+  const toastNoDuplicateBotsWarning = (name) =>
     toast(
       `Bot ${name.toUpperCase()} is already in the army and cannot be added again!`,
       {
         type: "warning",
       }
     );
-  const botAddedToArmySuccessfully = (name) =>
+  const toastBotAddedToArmySuccessfully = (name) =>
     toast(`Bot ${name.toUpperCase()} has been sucessfully added to Army!`, {
       type: "success",
     });
@@ -26,13 +27,22 @@ const BotCollection = () => {
     if (!matchingBot) {
       let updatedArmy = [...botArmy, botArmyItem];
       setBotArmy(updatedArmy);
-      botAddedToArmySuccessfully(botArmyItem.name);
+      toastBotAddedToArmySuccessfully(botArmyItem.name);
     } else {
-      noDuplicateBotsWarning(botArmyItem.name);
+      toastNoDuplicateBotsWarning(botArmyItem.name);
     }
   }
 
-  const randomNum = Math.floor(Math.random() * 100) + 1;
+  function deleteBot(botId) {
+    console.log(botId);
+    fetch(`http://localhost:4000/bots/${botId}`, {
+      method: "DELETE",
+    });
+    const filteredData = botData.filter((bot) => bot.id != botId);
+    setBotData(filteredData);
+    console.log(botData.length);
+    console.log(filteredData.length);
+  }
 
   useEffect(() => {
     fetch(`http://localhost:4000/bots`)
@@ -41,7 +51,12 @@ const BotCollection = () => {
   }, []);
 
   const botCards = botData.map((bot) => (
-    <BotCard onAddToArmy={addToArmy} key={bot.id} bot={bot} />
+    <BotCard
+      onDeleteBot={deleteBot}
+      onAddToArmy={addToArmy}
+      key={bot.id}
+      bot={bot}
+    />
   ));
 
   const botArmyCards = botArmy.map((bot) => <BotArmy key={bot.id} bot={bot} />);

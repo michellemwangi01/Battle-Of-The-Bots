@@ -1,11 +1,15 @@
 import React from "react";
 
-const BotCard = ({ bot, onAddToArmy }) => {
+const BotCard = ({ bot, onAddToArmy, onDeleteBot }) => {
   const botId = bot.id;
 
   function addBotToArmy(e) {
     e.preventDefault();
     onAddToArmy(botId);
+  }
+
+  function deleteHandler() {
+    onDeleteBot(botId);
   }
 
   return (
@@ -29,9 +33,16 @@ const BotCard = ({ bot, onAddToArmy }) => {
             <p>
               <b>{bot.catchphrase}</b>
             </p>
-            <button onClick={addBotToArmy} class="enlist">
-              Enlist
-            </button>
+            <div className="enlistAndDelete">
+              <button onClick={addBotToArmy} class="enlist">
+                Enlist
+              </button>
+              <i
+                onClick={deleteHandler}
+                class="fas fa-window-close fa-lg"
+                style={{ color: "#e00b0b", fontSize: "2rem" }}
+              ></i>
+            </div>
           </div>
         </div>
       </div>

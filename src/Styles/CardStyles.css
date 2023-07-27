@@ -151,7 +151,7 @@ body {
   color: white;
 }
 #BATTLEOFTHEBOTS {
-  /* color: whitesmoke; */
+  padding: 2rem;
 }
 .armyBotsContainer {
   background: url("/src/Images/robot.jpg");
@@ -159,4 +159,12 @@ body {
   object-fit: cover;
   display: flex;
   flex-direction: column;
+}
+.enlistAndDelete {
+  position: absolute;
+  bottom: 3%;
+  width: 95%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
