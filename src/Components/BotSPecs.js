@@ -1,6 +1,6 @@
 import React from "react";
 
-const BotSPecs = ({ selectedBot }) => {
+const BotSPecs = ({ setViewBotDetailsBool, selectedBot }) => {
   const {
     avatar_url,
     armor,
@@ -12,14 +12,21 @@ const BotSPecs = ({ selectedBot }) => {
     name,
     updated_at,
   } = selectedBot[0];
-  console.log(selectedBot[0]);
+
+  function backToCollection() {
+    console.log("I was clicked");
+    setViewBotDetailsBool(false);
+  }
 
   return (
     <div>
-      <div class="projcard-container">
+      <div onDoubleClick={backToCollection} class="projcard-container">
+        <i class="fa-regular fa-rectangle-xmark"></i>
         <div class="projcard projcard-blue">
           <div class="projcard-innerbox">
-            <img class="projcard-img" src={avatar_url} />
+            <div>
+              <img class="projcard-img" src={avatar_url} />
+            </div>
             <div class="projcard-textbox">
               <div class="projcard-title">
                 {" "}
@@ -31,10 +38,18 @@ const BotSPecs = ({ selectedBot }) => {
               <div class="projcard-bar"></div>
               <div class="projcard-tagbox">
                 <div class="projcard-tag">
-                  <i class="fa-solid fa-shield"></i>Class: {bot_class}
+                  <p className="botDeets">
+                    <i class="fa fa-shield"></i>Class: {bot_class}
+                  </p>
                 </div>
-                <span class="projcard-tag">Health: {health}</span>
-                <span class="projcard-tag">Damage: {damage}</span>
+                <span class="projcard-tag">
+                  {" "}
+                  <p className="botDeets">Health: {health}</p>
+                </span>
+                <span class="projcard-tag">
+                  {" "}
+                  <p className="botDeets">Damage: {damage}</p>
+                </span>
               </div>
             </div>
           </div>

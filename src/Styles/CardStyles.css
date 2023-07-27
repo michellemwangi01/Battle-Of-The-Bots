@@ -94,6 +94,12 @@ body {
 em {
   font-weight: 900;
 }
+#closeSpecs {
+  position: absolute;
+  top: -320%;
+  right: -25px;
+  z-index: 10;
+}
 .botCollection {
   display: flex;
   flex-direction: row;
@@ -174,11 +180,7 @@ em {
 
 /* **************************** BOT SPECS CARD******************************************* */
 /* Demo Code: */
-body {
-  font-family: "Open Sans", arial, sans-serif;
-  color: #333;
-  font-size: 14px;
-}
+
 .projcard-container {
   margin: 50px 0;
 }
@@ -191,7 +193,7 @@ body {
 .projcard-container {
   margin-left: auto;
   margin-right: auto;
-  width: 1000px;
+  width: 900px;
 }
 .projcard {
   position: relative;
@@ -225,11 +227,9 @@ body {
   background-image: linear-gradient(-250deg, #424242, transparent 50%);
 }
 .projcard-innerbox {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+}
+.projcard-innerbox img {
+  background-color: var(--secondary-color);
 }
 .projcard-img {
   position: absolute;
@@ -247,7 +247,7 @@ body {
   transform: scale(1.05) rotate(1deg);
 }
 .projcard:hover .projcard-bar {
-  width: 70px;
+  width: 50px;
 }
 .projcard-textbox {
   position: absolute;
@@ -293,12 +293,13 @@ body {
   font-size: 24px;
 }
 .projcard-subtitle {
+  word-break: break-all;
   font-family: "Voces", "Open Sans", arial, sans-serif;
-  color: #888;
+  color: black;
 }
 .projcard-bar {
   left: -2px;
-  width: 50px;
+  width: 450px;
   height: 5px;
   margin: 10px 0;
   border-radius: 5px;
@@ -394,6 +395,8 @@ body {
   text-overflow: ellipsis;
 }
 .projcard-tagbox {
+  position: absolute;
+  bottom: 5%;
   font-size: 16px;
   cursor: default;
   user-select: none;
@@ -403,8 +406,9 @@ body {
 }
 .projcard-tag {
   display: inline-block;
-  background: #e0e0e0;
-  color: #777;
+  padding: 15px;
+  background: var(--secondary-color);
+  color: white;
   border-radius: 3px 0 0 3px;
   line-height: 26px;
   padding: 0 10px 0 23px;
@@ -413,6 +417,15 @@ body {
   cursor: default;
   user-select: none;
   transition: color 0.2s;
+}
+span {
+  padding: 15px;
+}
+.botDeets {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 .projcard-tag::before {
   content: "";
@@ -425,7 +438,8 @@ body {
   width: 6px;
   top: 10px;
 }
-.projcard-tag::after {
+/* .projcard-tag::after {
+  color: var(--secondary-color);
   content: "";
   position: absolute;
   border-bottom: 13px solid transparent;
@@ -433,4 +447,4 @@ body {
   border-top: 13px solid transparent;
   right: -10px;
   top: 0;
-}
+} */

@@ -108,7 +108,10 @@ const BotCollection = () => {
         <h1 id="BotCollectionTitle">The Bot Collection</h1>
         {viewBotDetailsBool ? (
           <div className="botCollection">
-            <BotSPecs selectedBot={selectedBot} />
+            <BotSPecs
+              setViewBotDetailsBool={setViewBotDetailsBool}
+              selectedBot={selectedBot}
+            />
           </div>
         ) : (
           <div className="botCollection">{botCards}</div>
