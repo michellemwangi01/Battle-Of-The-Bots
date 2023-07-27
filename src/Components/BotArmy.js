@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 
-const BotArmy = ({ bot }) => {
+const BotArmy = ({ bot, onArmyRemove }) => {
+  const botID = bot.id;
+  function removeFromArmy() {
+    console.log(botID);
+    onArmyRemove(botID);
+  }
+
   return (
     <div>
       <div>
-        <div key={bot.id} class="container container_Army">
+        <div
+          onClick={removeFromArmy}
+          key={bot.id}
+          class="container container_Army"
+        >
           <div class="container__info">
             <span>
               <i class="fas fa-eye"></i> {bot.armor}3

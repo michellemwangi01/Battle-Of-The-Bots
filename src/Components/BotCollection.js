@@ -7,19 +7,7 @@ import _ from "lodash";
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
-  // const shuffledbots = _.shuffle(botData); //Randomize bot order using 1. import _ from 'lodash'; 2.const shuffledArray = _.shuffle(myArray);
-
-  const toastNoDuplicateBotsWarning = (name) =>
-    toast(
-      `Bot ${name.toUpperCase()} is already in the army and cannot be added again!`,
-      {
-        type: "warning",
-      }
-    );
-  const toastBotAddedToArmySuccessfully = (name) =>
-    toast(`Bot ${name.toUpperCase()} has been sucessfully added to Army!`, {
-      type: "success",
-    });
+  const shuffledbots = _.shuffle(botData); //Randomize bot order using 1. import _ from 'lodash'; 2.const shuffledArray = _.shuffle(myArray);
 
   function addToArmy(botId) {
     const botArmyItem = botData.find((bot) => bot.id == botId);
@@ -43,6 +31,17 @@ const BotCollection = () => {
 
     const filteredBotArmyData = botArmy.filter((bot) => bot.id != botId);
     setBotArmy(filteredBotArmyData);
+
+    const deletedBot = botData.find((bot) => bot.id == botId);
+
+    toastBotDeletedSuccessfully(deletedBot.name);
+  }
+
+  function removeFromArmy(botId) {
+    const remainingArmyBots = botArmy.filter((bot) => bot.id != botId);
+    setBotArmy(remainingArmyBots);
+    const removedFromArmyBot = botData.find((bot) => bot.id == botId);
+    toastBotRemovedFromArmy(removedFromArmyBot.name);
   }
 
   useEffect(() => {
@@ -51,7 +50,7 @@ const BotCollection = () => {
       .then((data) => setBotData(data));
   }, []);
 
-  const botCards = botData.map((bot) => (
+  const botCards = shuffledbots.map((bot) => (
     <BotCard
       onDeleteBot={deleteBot}
       onAddToArmy={addToArmy}
@@ -60,7 +59,32 @@ const BotCollection = () => {
     />
   ));
 
-  const botArmyCards = botArmy.map((bot) => <BotArmy key={bot.id} bot={bot} />);
+  const botArmyCards = botArmy.map((bot) => (
+    <BotArmy onArmyRemove={removeFromArmy} key={bot.id} bot={bot} />
+  ));
+
+  // *************************** TOAST ********************************
+  const toastNoDuplicateBotsWarning = (name) =>
+    toast(
+      `Bot ${name.toUpperCase()} is already in the army and cannot be added again!`,
+      {
+        type: "warning",
+      }
+    );
+  const toastBotAddedToArmySuccessfully = (name) =>
+    toast(`Bot ${name.toUpperCase()} has been sucessfully added to Army!`, {
+      type: "success",
+    });
+
+  const toastBotDeletedSuccessfully = (name) =>
+    toast(`Bot ${name.toUpperCase()} has been sucessfully deleted!`, {
+      type: "success",
+    });
+
+  const toastBotRemovedFromArmy = (name) =>
+    toast(`Bot ${name.toUpperCase()} has been removed from the army!`, {
+      type: "success",
+    });
 
   return (
     <div>
