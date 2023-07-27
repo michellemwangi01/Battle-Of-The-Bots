@@ -113,7 +113,7 @@ const BotCollection = () => {
           <h1 id="BotCollectionTitle"> The Bot Collection</h1>
         )} */}
         <div id="filterContainer">
-          <p>Count: {botData.length}</p>
+          <p>Bots on Display: {botData.length}</p>
           <BotFilter botData={botData} setBotData={setBotData} />
         </div>
         {viewBotDetailsBool ? (

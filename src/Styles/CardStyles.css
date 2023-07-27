@@ -2,6 +2,7 @@
   --bright-color: #fff;
   --blue: #1a75ff;
   --secondary-color: #08234c;
+  --tertiary-color: rgb(24, 24, 141);
 }
 
 @mixin bottom {
@@ -141,10 +142,9 @@ label {
 }
 #filterContainer p {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: white;
-  color: var(--secondary-color);
+  background-color: transparent;
   font-weight: 500;
   padding: 10px;
   border-radius: 15px;
@@ -218,7 +218,12 @@ label {
   padding: 2rem;
 }
 .armyBotsContainer {
-  background: url("/src/Images/robot.jpg");
+  background-image: linear-gradient(
+      rgba(24, 24, 141, 0.5),
+      rgba(24, 24, 141, 0.5)
+    ),
+    url("/src/Images/robot.jpg");
+  background-color: rgba(24, 24, 141, 0.5);
   background-repeat: repeat;
   object-fit: cover;
   display: flex;
