@@ -38,10 +38,11 @@ const BotCollection = () => {
     fetch(`http://localhost:4000/bots/${botId}`, {
       method: "DELETE",
     });
-    const filteredData = botData.filter((bot) => bot.id != botId);
-    setBotData(filteredData);
-    console.log(botData.length);
-    console.log(filteredData.length);
+    const filteredBotCollectionData = botData.filter((bot) => bot.id != botId);
+    setBotData(filteredBotCollectionData);
+
+    const filteredBotArmyData = botArmy.filter((bot) => bot.id != botId);
+    setBotArmy(filteredBotArmyData);
   }
 
   useEffect(() => {
