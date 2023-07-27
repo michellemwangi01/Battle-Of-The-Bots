@@ -107,14 +107,14 @@ const BotCollection = () => {
       </div>
 
       <div>
-        {viewBotDetailsBool ? (
+        {/* {viewBotDetailsBool ? (
           <h1 id="BotCollectionTitle"> Bot Specifications</h1>
         ) : (
           <h1 id="BotCollectionTitle"> The Bot Collection</h1>
-        )}
+        )} */}
         <div id="filterContainer">
-          <BotFilter botData={botData} setBotData={setBotData} />
           <p>Count: {botData.length}</p>
+          <BotFilter botData={botData} setBotData={setBotData} />
         </div>
         {viewBotDetailsBool ? (
           <div className="botCollection">

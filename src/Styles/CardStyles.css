@@ -16,7 +16,7 @@
 }
 /* 80afcd */
 body {
-  background-color: var(--blue);
+  background-color: rgb(24, 24, 141);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
@@ -100,6 +100,10 @@ em {
   border: white 1px solid;
   margin: 10px;
 }
+
+.botClassCheckboxFilter:checked {
+  background-color: black;
+}
 label {
   font-size: 20px;
   color: white;
@@ -108,12 +112,18 @@ label {
 #submitFilter {
   padding: 5px;
   width: 5rem;
-  margin: 1rem;
+  margin-left: 1rem;
+
   font-size: 1.2rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   border-radius: 10px;
-  background-color: var(--secondary-color);
+  background-color: transparent;
+  border: white 1px solid;
   color: white;
+}
+
+#submitFilter:hover {
+  background-color: #08234c;
 }
 #closeSpecs {
   position: absolute;
@@ -126,8 +136,8 @@ label {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin: auto;
+  width: 95%;
+  margin: 2rem auto;
 }
 #filterContainer p {
   color: white;
