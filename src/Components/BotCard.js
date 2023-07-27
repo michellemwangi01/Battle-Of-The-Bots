@@ -1,6 +1,6 @@
 import React from "react";
 
-const BotCard = ({ bot, onAddToArmy, onDeleteBot }) => {
+const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
   const botId = bot.id;
 
   function addBotToArmy(e) {
@@ -12,9 +12,13 @@ const BotCard = ({ bot, onAddToArmy, onDeleteBot }) => {
     onDeleteBot(botId);
   }
 
+  function botCardHandler() {
+    //console.log(botId);
+    onViewBotDetails(botId);
+  }
   return (
     <div>
-      <div key={bot.id} class="container">
+      <div onDoubleClick={botCardHandler} key={bot.id} class="container">
         <div class="container__info">
           <span>
             <i class="fas fa-eye"></i> {bot.armor}3

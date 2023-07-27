@@ -3,10 +3,13 @@ import BotArmy from "./BotArmy";
 import BotCard from "./BotCard";
 import { toast } from "react-toastify";
 import _ from "lodash";
+import BotSPecs from "./BotSPecs";
 
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
+  const [viewBotDetailsBool, setViewBotDetailsBool] = useState(false);
+  const [selectedBot, setSelectedBot] = useState({});
   const shuffledbots = _.shuffle(botData); //Randomize bot order using 1. import _ from 'lodash'; 2.const shuffledArray = _.shuffle(myArray);
 
   function addToArmy(botId) {
@@ -44,6 +47,14 @@ const BotCollection = () => {
     toastBotRemovedFromArmy(removedFromArmyBot.name);
   }
 
+  function viewBotDetails(botId) {
+    setViewBotDetailsBool((prevState) => !prevState);
+    console.log(viewBotDetailsBool);
+    const selectedBot = botData.filter((bot) => bot.id == botId);
+    setSelectedBot(selectedBot);
+  }
+
+  console.log(viewBotDetailsBool);
   useEffect(() => {
     fetch(`http://localhost:4000/bots`)
       .then((res) => res.json())
@@ -52,6 +63,7 @@ const BotCollection = () => {
 
   const botCards = shuffledbots.map((bot) => (
     <BotCard
+      onViewBotDetails={viewBotDetails}
       onDeleteBot={deleteBot}
       onAddToArmy={addToArmy}
       key={bot.id}
@@ -72,17 +84,17 @@ const BotCollection = () => {
       }
     );
   const toastBotAddedToArmySuccessfully = (name) =>
-    toast(`Bot ${name.toUpperCase()} has been sucessfully added to Army!`, {
+    toast(`Bot ${name.toUpperCase()} sucessfully added to Army!`, {
       type: "success",
     });
 
   const toastBotDeletedSuccessfully = (name) =>
-    toast(`Bot ${name.toUpperCase()} has been sucessfully deleted!`, {
+    toast(`Bot ${name.toUpperCase()} sucessfully deleted!`, {
       type: "success",
     });
 
   const toastBotRemovedFromArmy = (name) =>
-    toast(`Bot ${name.toUpperCase()} has been removed from the army!`, {
+    toast(`Bot ${name.toUpperCase()} removed from the army!`, {
       type: "success",
     });
 
@@ -94,7 +106,13 @@ const BotCollection = () => {
       </div>
       <div>
         <h1 id="BotCollectionTitle">The Bot Collection</h1>
-        <div className="botCollection">{botCards}</div>
+        {viewBotDetailsBool ? (
+          <div className="botCollection">
+            <BotSPecs selectedBot={selectedBot} />
+          </div>
+        ) : (
+          <div className="botCollection">{botCards}</div>
+        )}
       </div>
     </div>
   );
