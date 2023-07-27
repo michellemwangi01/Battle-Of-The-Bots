@@ -1,7 +1,8 @@
 import React from "react";
 
-const BotSPecs = ({ setViewBotDetailsBool, selectedBot }) => {
+const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
   const {
+    id,
     avatar_url,
     armor,
     bot_class,
@@ -16,6 +17,9 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot }) => {
   function backToCollection() {
     console.log("I was clicked");
     setViewBotDetailsBool(false);
+  }
+  function enlistHandler() {
+    onAddToArmy(id);
   }
 
   return (
@@ -51,6 +55,10 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot }) => {
                   <p className="botDeets">Damage: {damage}</p>
                 </span>
               </div>
+            </div>
+            <div className="specsButtonHolder">
+              <button onClick={backToCollection}>Back</button>
+              <button onClick={enlistHandler}>Enlist</button>
             </div>
           </div>
         </div>

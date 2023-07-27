@@ -1,4 +1,6 @@
 import React from "react";
+// import { Router, Route } from "rea";
+// import { NavLink } from "react-router-dom";
 
 const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
   const botId = bot.id;
@@ -18,7 +20,7 @@ const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
   }
   return (
     <div>
-      <div onDoubleClick={botCardHandler} key={bot.id} class="container">
+      <div onDoubleClick={addBotToArmy} key={bot.id} class="container">
         <div class="container__info">
           <span>
             <i class="fas fa-eye"></i> {bot.armor}3
@@ -38,8 +40,8 @@ const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
               <b>{bot.catchphrase}</b>
             </p>
             <div className="enlistAndDelete">
-              <button onClick={addBotToArmy} class="enlist">
-                Enlist
+              <button onClick={botCardHandler} class="enlist">
+                View Details
               </button>
               <i
                 onClick={deleteHandler}

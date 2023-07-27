@@ -4,8 +4,7 @@ import BotCollection from "./Components/BotCollection";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import BotSPecs from "./Components/BotSPecs";
-
+// import { BrowserRouter as Router, Route } from "react.router-dom";
 function App() {
   const notify = () => toast("Wow so easy!");
 
