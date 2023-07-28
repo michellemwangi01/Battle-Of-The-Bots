@@ -32,9 +32,9 @@ body {
   background-position: center;
   background-size: cover; */
   background-color: rgba(0, 0, 0, 0.7);
-  margin: 10px;
+  margin: 25px;
   width: 350px;
-  height: 520px;
+  height: 540px;
   position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
   .container__info {
@@ -112,7 +112,7 @@ label {
 }
 #submitFilter {
   padding: 5px;
-  width: 5rem;
+  width: 7rem;
   margin-left: 1rem;
 
   font-size: 1.2rem;
@@ -137,7 +137,7 @@ label {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 80%;
   margin: 2rem auto;
 }
 #filterContainer p {
@@ -148,6 +148,20 @@ label {
   font-weight: 500;
   padding: 10px;
   border-radius: 15px;
+}
+#sortForm {
+  display: flex;
+  width: 15rem;
+}
+#sortSelect {
+  padding: 3px 5px;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: transparent;
+  color: white;
+}
+#sortSelect option {
+  color: black;
 }
 .botCollection {
   display: flex;

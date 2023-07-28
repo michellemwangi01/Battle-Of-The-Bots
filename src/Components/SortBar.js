@@ -21,8 +21,9 @@ const SortBar = ({ botData, setBotData }) => {
 
   return (
     <div>
-      <form>
-        <select onChange={inputHandler}>
+      <form id="sortForm">
+        <p> Sort by:</p>
+        <select id="sortSelect" onChange={inputHandler}>
           <option>Select</option>
           <option value="health">Health</option>
           <option value="damage">Damage</option>

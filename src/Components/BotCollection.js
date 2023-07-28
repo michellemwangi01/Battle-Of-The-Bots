@@ -116,7 +116,6 @@ const BotCollection = () => {
           <h1 id="BotCollectionTitle"> The Bot Collection</h1>
         )} */}
         <div id="filterContainer">
-          <p>Bots on Display: {botData.length}</p>
           <SortBar botData={botData} setBotData={setBotData} />
           <BotFilter botData={botData} setBotData={setBotData} />
         </div>

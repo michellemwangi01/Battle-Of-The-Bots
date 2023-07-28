@@ -100,7 +100,7 @@ const BotFilter = ({ botData, setBotData }) => {
         <label>Witch</label>
 
         <button type="submit" id="submitFilter">
-          Filter
+          Filter - {botData.length}
         </button>
       </form>
     </div>

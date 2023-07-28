@@ -33,12 +33,14 @@ const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
           </span>
         </div>
         <div class="container__profile">
+          <p style={{ color: "grey" }}>{bot.bot_class}</p>
           <img src={bot.avatar_url} alt="people" />
           <div class="container__profile__text">
             <h2>Name: {bot.name}</h2>
             <p>
               <b>{bot.catchphrase}</b>
             </p>
+
             <div className="enlistAndDelete">
               <button onClick={botCardHandler} class="enlist">
                 View Details
