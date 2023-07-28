@@ -17,13 +17,13 @@ const BotArmy = ({ bot, onArmyRemove }) => {
         >
           <div class="container__info">
             <span>
-              <i class="fas fa-eye"></i> {bot.armor}3
+              <i class="fas fa-eye"></i> {bot.armor}
             </span>
             <span>
-              <i class="fas fa-comment-alt"></i> {bot.health}2
+              <i class="fas fa-comment-alt"></i> {bot.health}
             </span>
             <span>
-              <i class="fas fa-download"></i> {bot.damage}1
+              <i class="fas fa-download"></i> {bot.damage}
             </span>
           </div>
           <h2 id="botName">{bot.name}</h2>
