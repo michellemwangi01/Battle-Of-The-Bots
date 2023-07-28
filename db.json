@@ -469,18 +469,6 @@
       "updated_at": "2018-10-02T19:55:11.795Z"
     },
     {
-      "id": 150,
-      "name": "St-74",
-      "health": 89,
-      "damage": 29,
-      "armor": 44,
-      "bot_class": "Support",
-      "catchphrase": "011000011111000111001100101111110000",
-      "avatar_url": "https://robohash.org/necessitatibusquisunt.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:11.807Z",
-      "updated_at": "2018-10-02T19:55:11.807Z"
-    },
-    {
       "id": 151,
       "name": "Fd-25",
       "health": 53,
@@ -575,18 +563,6 @@
       "avatar_url": "https://robohash.org/fugasuntiure.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:11.943Z",
       "updated_at": "2018-10-02T19:55:11.943Z"
-    },
-    {
-      "id": 159,
-      "name": "Dq-39",
-      "health": 60,
-      "damage": 89,
-      "armor": 39,
-      "bot_class": "Assault",
-      "catchphrase": "111101111111011011111111001001100010011010",
-      "avatar_url": "https://robohash.org/voluptatemquasest.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:11.955Z",
-      "updated_at": "2018-10-02T19:55:11.955Z"
     },
     {
       "id": 160,
@@ -839,18 +815,6 @@
       "avatar_url": "https://robohash.org/invelitmaiores.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:12.230Z",
       "updated_at": "2018-10-02T19:55:12.230Z"
-    },
-    {
-      "id": 181,
-      "name": "J-87",
-      "health": 97,
-      "damage": 40,
-      "armor": 72,
-      "bot_class": "Support",
-      "catchphrase": "1111000010010001110101100101010",
-      "avatar_url": "https://robohash.org/architectocorruptiaccusantium.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:12.245Z",
-      "updated_at": "2018-10-02T19:55:12.245Z"
     },
     {
       "id": 182,

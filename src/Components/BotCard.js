@@ -23,13 +23,13 @@ const BotCard = ({ bot, onAddToArmy, onDeleteBot, onViewBotDetails }) => {
       <div onDoubleClick={addBotToArmy} key={bot.id} class="container">
         <div class="container__info">
           <span>
-            <i class="fas fa-eye"></i> {bot.armor}3
+            <i class="fas fa-eye"></i> A-{bot.armor}
           </span>
           <span>
-            <i class="fas fa-comment-alt"></i> {bot.health}2
+            <i class="fas fa-comment-alt"></i> H-{bot.health}
           </span>
           <span>
-            <i class="fas fa-download"></i> {bot.damage}1
+            <i class="fas fa-download"></i> D-{bot.damage}
           </span>
         </div>
         <div class="container__profile">

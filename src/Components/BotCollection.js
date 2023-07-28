@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import _ from "lodash";
 import BotSPecs from "./BotSPecs";
 import BotFilter from "./BotFilter";
+import SortBar from "./SortBar";
 
 const BotCollection = () => {
   const [botData, setBotData] = useState([]);
@@ -62,7 +63,7 @@ const BotCollection = () => {
       .then((data) => setBotData(data));
   }, []);
 
-  const botCards = shuffledbots.map((bot) => (
+  const botCards = botData.map((bot) => (
     <BotCard
       onViewBotDetails={viewBotDetails}
       onDeleteBot={deleteBot}
@@ -75,6 +76,8 @@ const BotCollection = () => {
   const botArmyCards = botArmy.map((bot) => (
     <BotArmy onArmyRemove={removeFromArmy} key={bot.id} bot={bot} />
   ));
+
+  console.log(botArmy);
 
   // *************************** TOAST ********************************
   const toastNoDuplicateBotsWarning = (name) =>
@@ -114,6 +117,7 @@ const BotCollection = () => {
         )} */}
         <div id="filterContainer">
           <p>Bots on Display: {botData.length}</p>
+          <SortBar botData={botData} setBotData={setBotData} />
           <BotFilter botData={botData} setBotData={setBotData} />
         </div>
         {viewBotDetailsBool ? (

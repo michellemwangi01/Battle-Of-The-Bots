@@ -5,6 +5,7 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BotFilter from "./Components/BotFilter";
+import SortBar from "./Components/SortBar";
 // import { BrowserRouter as Router, Route } from "react.router-dom";
 function App() {
   const notify = () => toast("Wow so easy!");

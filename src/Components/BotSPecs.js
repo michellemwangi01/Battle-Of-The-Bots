@@ -58,6 +58,10 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
             <div className="specsButtonHolder">
               <button onClick={backToCollection}>Back</button>
               <button onClick={enlistHandler}>Enlist</button>
+              <i class="fas fa-shield-alt"></i>
+              <i class="fas fa-hospital"></i>
+              <i class="fas fa-fighter-jet"></i>
+              <i class="fas fa-fist-raised"></i>
             </div>
           </div>
         </div>
