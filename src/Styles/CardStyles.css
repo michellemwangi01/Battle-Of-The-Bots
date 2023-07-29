@@ -122,7 +122,9 @@ label {
   border: white 1px solid;
   color: white;
 }
-
+#Army_Info {
+  padding: 5px 30px 0px 30px;
+}
 #submitFilter:hover {
   background-color: #08234c;
 }
@@ -344,9 +346,9 @@ body {
   left: initial;
   right: 0;
 }
-.projcard:hover .projcard-img {
+/* .projcard:hover .projcard-img {
   transform: scale(1.05) rotate(1deg);
-}
+} */
 /* .projcard:hover .projcard-bar {
   width: 50px;
 } */
