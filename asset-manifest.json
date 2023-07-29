@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/michellemwangi01/db_BattleOfTheBots/static/css/main.66cd6b6c.css",
+    "main.js": "/michellemwangi01/db_BattleOfTheBots/static/js/main.3629716d.js",
+    "static/js/787.5859428b.chunk.js": "/michellemwangi01/db_BattleOfTheBots/static/js/787.5859428b.chunk.js",
+    "static/media/robot.jpg": "/michellemwangi01/db_BattleOfTheBots/static/media/robot.565991b94a6d5772892c.jpg",
+    "index.html": "/michellemwangi01/db_BattleOfTheBots/index.html",
+    "main.66cd6b6c.css.map": "/michellemwangi01/db_BattleOfTheBots/static/css/main.66cd6b6c.css.map",
+    "main.3629716d.js.map": "/michellemwangi01/db_BattleOfTheBots/static/js/main.3629716d.js.map",
+    "787.5859428b.chunk.js.map": "/michellemwangi01/db_BattleOfTheBots/static/js/787.5859428b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66cd6b6c.css",
+    "static/js/main.3629716d.js"
+  ]
+}
