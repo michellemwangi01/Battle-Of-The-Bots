@@ -24,6 +24,11 @@ function App() {
         theme="dark"
       />
       <BotCollection />
+      <div id="copyrightContainer">
+        <p id="copyrightText" style={{ color: "white", textAlign: "center" }}>
+          &copy;2023 MichelleMwangi All rights reserved.
+        </p>
+      </div>
     </div>
   );
 }

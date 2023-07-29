@@ -282,6 +282,16 @@ body {
 .projcard-container {
   margin: 50px 0;
 }
+#copyrightContainer {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#copyrightText {
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 
 /* Actual Code: */
 .projcard-container,

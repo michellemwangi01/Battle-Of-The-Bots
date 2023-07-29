@@ -12,6 +12,20 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
     name,
   } = selectedBot[0];
 
+  let botClassIcon;
+  if (bot_class == "Defender") {
+    botClassIcon = <i class="fas fa-shield-alt"></i>;
+  } else if (bot_class == "Medic") {
+    botClassIcon = <i class="fas fa-hospital"></i>;
+  } else if (bot_class == "Witch") {
+    botClassIcon = <i class="fas fa-shield-alt"></i>;
+  } else if (bot_class == "Captain") {
+    botClassIcon = <i class="fas fa-captain"></i>;
+  } else if (bot_class == "Assault") {
+    botClassIcon = <i class="fas fa-fighter-jet"></i>;
+  } else if (bot_class == "Support") {
+    botClassIcon = <i class="fas fa-fist-raised"></i>;
+  }
   function backToCollection() {
     console.log("I was clicked");
     setViewBotDetailsBool(false);
@@ -39,11 +53,11 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
               </div>
               <div class="projcard-bar"></div>
               <div class="projcard-tagbox">
-                <div class="projcard-tag">
+                {/* <div class="projcard-tag">
                   <p className="botDeets">
                     <i class="fa fa-shield"></i>Class: {bot_class}
                   </p>
-                </div>
+                </div> */}
                 <span class="projcard-tag">
                   <p className="botDeets">Health: {health}</p>
                 </span>
@@ -62,6 +76,7 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
               <i class="fas fa-hospital"></i>
               <i class="fas fa-fighter-jet"></i>
               <i class="fas fa-fist-raised"></i>
+              <i class=" fas fa-hat-captain"></i>
             </div>
           </div>
         </div>

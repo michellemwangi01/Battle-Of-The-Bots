@@ -8,6 +8,8 @@ import BotFilter from "./BotFilter";
 import SortBar from "./SortBar";
 
 const BotCollection = () => {
+  const localdb = `http://localhost:4000/bots/`;
+  const renderdb = `https://db-battleofthebots.onrender.com/bots/`;
   const [botData, setBotData] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
   const [viewBotDetailsBool, setViewBotDetailsBool] = useState(false);
@@ -31,6 +33,9 @@ const BotCollection = () => {
       } else {
         let updatedArmy = [...botArmy, botArmyItem];
         setBotArmy(updatedArmy);
+        //removing bots from bot collection that have been added to the army
+        // const botsNotInArmy = botData.filter((bot) => bot.id != botArmyItem.id);
+        // setBotData(botsNotInArmy);
         toastBotAddedToArmySuccessfully(botArmyItem.name);
       }
     } else {
@@ -40,7 +45,7 @@ const BotCollection = () => {
 
   function deleteBot(botId) {
     console.log(botId);
-    fetch(`http://localhost:4000/bots/${botId}`, {
+    fetch(`${renderdb}${botId}`, {
       method: "DELETE",
     });
     const filteredBotCollectionData = botData.filter((bot) => bot.id != botId);
@@ -58,6 +63,7 @@ const BotCollection = () => {
     const remainingArmyBots = botArmy.filter((bot) => bot.id != botId);
     setBotArmy(remainingArmyBots);
     const removedFromArmyBot = botData.find((bot) => bot.id == botId);
+    // setBotData([...botData, removedFromArmyBot]);
     toastBotRemovedFromArmy(removedFromArmyBot.name);
   }
 
@@ -70,7 +76,7 @@ const BotCollection = () => {
 
   //console.log(viewBotDetailsBool);
   useEffect(() => {
-    fetch(`http://localhost:4000/bots`)
+    fetch(`${renderdb}`)
       .then((res) => res.json())
       .then((data) => setBotData(data));
   }, []);
