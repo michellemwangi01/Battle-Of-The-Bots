@@ -1,41 +1,41 @@
-###BATTLE OF THE BOTS
-This repository contains several React components that are part of a larger project related to an exciting bot collection. The components interact with each other to provide users with a captivating bot collection experience. Below, we provide a brief overview of each component and its purpose.
+##BATTLE OF THE BOTTS
+Welcome to Bot Battlr! This is a React web application where you can custom build your own Bot Army and enlist bots to conquer the galaxy! The app allows you to browse through a list of robots, view their details, and recruit them into your army.
+![Alt text](battleofthebots/src/Images/BattleoftheBots.png)
 
-###Components Overview
+#Features
+View profiles of all bots in the BotCollection.
+Enlist bots into your army by clicking on them. Enlisted bots will appear in the YourBotArmy component.
+Release bots from your army by clicking on them in the YourBotArmy component.
+Discharge bots from your service permanently using the red "x" button, which removes the bot from both the backend and the YourBotArmy.
 
-##1. App Component
-The App component serves as the main container for other components and holds the overall layout and structure of the app. This component is primarily responsible for rendering the BotList component, which displays the collection of bot cards. It utilizes FilterBar and SortBar components to allow users to filter and sort the bot collection,It also handles the main routing of the Application, providing users with smooth navigation and an engaging experience.
+#Getting Started
+To run this project locally on your machine, follow these steps:
+Clone the repository to your local machine: git clone git@github.com:michellemwangi01/Battle-of-The-Bots.git.
+Navigate to the project directory: cd react-client-transaction-tracker.
+Install the project dependencies: npm install.
+Start the JSON server: json-server --watch db.json.
+Start the development server: npm start.
+The application will be running on http://localhost:3000/ by default.
+Usage
 
-##2. BotList Component
-The BotList component is where the magic happens! It displays the entire bot collection, showcasing each bot as a card. Users can interact with each bot card, clicking on them to navigate to the BotSpecs component, which provides detailed information about a specific bot. The BotList component also allows users to filter the collection based on bot classes using the FilterBar component and sort the bots by health, damage, or armor using the SortBar component. This enhances the user experience by providing them with better organization and access to the bots they love.
+#Description
+In the Bots App, you will find an engaging interface that lets you explore a galaxy full of powerful bots waiting to be enlisted into your own Bot Army. The home page welcomes you with a stunning landing section, urging you to take control and forge your ultimate robotic force.
 
-##3. Bot Component
-The Bot component is responsible for rendering a single bot card. It takes in bot data as props and displays captivating information about the bot, including its name, catchphrase, class, and various attributes such as health, damage, and armor. The class icon is dynamically generated based on the bot's class, giving each bot a unique and visually appealing representation.
+To add a new bot to your army, simply click on the enticing "Enlist Bot" button. A user-friendly form will appear, prompting you to input essential details about the bot, such as its name, health, damage, armor, and class. Once you've filled in the required information, click "Enlist" to add the bot to your ranks, and it will be displayed in the esteemed "Your Bot Army" section.
 
-##4. BotSpecs Component
-The BotSpecs component provides in-depth details about a specific bot selected from the bot collection. When a user clicks on a bot card in the BotList component, they are redirected to the BotSpecs page. Here, they can see the bot's avatar, name, catchphrase, class, and attributes. The class icon is dynamically generated just like in the Bot component. The user can also enlist the bot into their army, navigate back to the main collection page or delete the specific bot from their collection, whcih removes it from the back-end as well.
+Should you decide to release a bot from your army, fear not, for it's a breeze. Locate the bot in "Your Bot Army," and a swift click on the "Release" button will grant the bot its freedom.
 
-##5. BotArmy Component
-The BotArmy component is where the real fun begins! It enables users to create their army of bots. When users enlist a bot from the BotSpecs page, it gets added to their enlisted bots. The enlisted bots are displayed in the BotArmy component, and users can remove bots they no longer want in their army. This interactive and captivating feature allows users to create their dream team of bots for an epic battle!
+For those seeking specific bots, our app provides a seamless search feature. Utilize the search bar to enter keywords or criteria, and witness the list of bots filter before your eyes, allowing you to find the perfect addition to your Bot Army.
 
-##6. FilterBar Component
-The FilterBar component enhances the bot collection experience by allowing users to filter bots based on their classes. Users can select one or more bot classes from the dropdown list, and the bot collection will be filtered accordingly. The filtered bots are displayed in real-time, providing users with immediate feedback and a seamless filtering experience
+Embrace the power of Bot Battlr, where every click shapes the destiny of your galactic conquest. Enlist, release, and search your way to victory!
 
-##7. SortBar Component
-The SortBar component adds another layer of user-friendliness to the bot collection. Users can sort the bots based on their health, damage, or armor attributes by selecting the desired sorting option from the dropdown list. This functionality enables users to find the most powerful or most resilient bots with ease.
+#Technologies Used
+React: A JavaScript library for building user interfaces.
+JSX: A syntax extension for JavaScript used in React components.
+CSS: Styling the application for a visually appealing user interface. npm: A package manager for installing and managing project dependencies. Create React App: A tool for creating React applications with no build configuration.
 
-###Getting Started
-To run the React App on your local machine, follow these steps:
+#Contributing
+Contributions to this project are welcome. If you find any bugs, issues, or improvements, feel free to submit a pull request or open an issue.
 
-Clone the repository: git clone https://github.com/michellemwangi01/Battle-Of-The-Bots/
-Navigate to the project directory: cd Battle of The Bots
-Install dependencies: npm install
-Navigate to src/data to start the server : json-server --watch ./src/data/db.json
-Start the development server: npm start
-Open your browser and go to http://localhost:3000 to view the app.
-
-##Contact
-For any further questions or inquiries, please contact michellemwangim@gmail.com.
-
-##License
-This code is created by and licensed to Michelle Mwangi.
+#Author & License
+This project is authored by and licensed to &copy; 2023 MichelleMwangi All rights reserved..
