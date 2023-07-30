@@ -5,10 +5,12 @@ Welcome to Battle of the Bots! This is a React web application where you can cus
 
 # Features
 
-View profiles of all bots in the BotCollection.
-Enlist bots into your army by clicking on them. Enlisted bots will appear in the YourBotArmy component.
-Release bots from your army by clicking on them in the YourBotArmy component.
-Discharge bots from your service permanently using the red "x" button, which removes the bot from both the backend and the YourBotArmy.
+1. View profiles of all bots in the BotCollection.
+2. Enlist bots into your army by clicking on them. Enlisted bots will appear in the YourBotArmy component.
+3. Release bots from your army by clicking on them in the YourBotArmy component.
+4. Discharge bots from your service permanently using the red "x" button, which removes the bot from both the backend and the YourBotArmy.
+5. View Bot details by clicking the 'view details' link which allows you to view the bot specs and to enlist.
+6. Get notified of all changes made to the bot army and bot collection.
 
 # Getting Started
 

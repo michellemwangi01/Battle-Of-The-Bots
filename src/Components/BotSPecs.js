@@ -47,11 +47,16 @@ const BotSPecs = ({ setViewBotDetailsBool, selectedBot, onAddToArmy }) => {
               <div class="projcard-title">
                 {" "}
                 <em>Name:</em> {name.toUpperCase()}
+                <p>
+                  {" "}
+                  <em>Class:</em> {bot_class.toLowerCase()}
+                </p>
               </div>
               <div class="projcard-subtitle">
                 <em>Catchphrase:</em> <br /> {catchphrase}
               </div>
               <div class="projcard-bar"></div>
+
               <div class="projcard-tagbox">
                 {/* <div class="projcard-tag">
                   <p className="botDeets">

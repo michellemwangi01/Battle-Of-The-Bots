@@ -384,7 +384,7 @@ body {
   top: -20%;
   left: -55px;
   height: 140%;
-  width: 45px;
+  width: 65px;
   transform: rotate(8deg);
 }
 .projcard:nth-child(2n) .projcard-textbox::before {
@@ -508,6 +508,7 @@ body {
   text-overflow: ellipsis;
 }
 .projcard-tagbox {
+  width: 100%;
   position: absolute;
   bottom: 25%;
   font-size: 16px;
@@ -515,7 +516,7 @@ body {
   user-select: none;
   pointer-events: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .projcard-tag {
   display: inline-block;
