@@ -1,4 +1,4 @@
-###BATTLE OF THE BOTS
+##BATTLE OF THE BOTS
 This repository contains several React components that are part of a larger project related to an exciting bot collection. The components interact with each other to provide users with a captivating bot collection experience. Below, we provide a brief overview of each component and its purpose.
 
 ###Components Overview
