@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const SortBar = ({ botData, setBotData }) => {
   const inputHandler = (e) => {
-    // console.log(botData);
     let sortChoice = e.target.value;
     const sortedBots = [...botData].sort((a, b) => {
       if (sortChoice === "health") {
@@ -17,7 +16,6 @@ const SortBar = ({ botData, setBotData }) => {
     });
     setBotData(sortedBots);
   };
-  console.log(botData);
 
   return (
     <div>

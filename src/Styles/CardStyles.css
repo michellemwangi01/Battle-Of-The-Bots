@@ -245,6 +245,13 @@ label {
   display: flex;
   flex-direction: column;
 }
+#loadingBots {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: whitesmoke;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
 .enlistAndDelete {
   position: absolute;
   bottom: 3%;

@@ -16,6 +16,7 @@ const BotCollection = () => {
   const [selectedBot, setSelectedBot] = useState({});
   const shuffledbots = _.shuffle(botData); //Randomize bot order using 1. import _ from 'lodash'; 2.const shuffledArray = _.shuffle(myArray);
   const [botArmyClasses, setBotArmyClasses] = useState([]);
+  const [itemsNotLoaded, setItemsNotLoaded] = useState(true);
 
   function addToArmy(botId) {
     const botArmyItem = botData.find((bot) => bot.id === botId);
@@ -74,11 +75,15 @@ const BotCollection = () => {
     setSelectedBot(selectedBot);
   }
 
-  //console.log(viewBotDetailsBool);
+  console.log(itemsNotLoaded);
   useEffect(() => {
     fetch(`${renderdb}`)
       .then((res) => res.json())
-      .then((data) => setBotData(data));
+      .then((data) => {
+        setBotData(data);
+        setItemsNotLoaded(false);
+        console.log(itemsNotLoaded);
+      });
   }, []);
 
   const botCards = botData.map((bot) => (
@@ -144,6 +149,11 @@ const BotCollection = () => {
               <SortBar botData={botData} setBotData={setBotData} />
               <BotFilter botData={botData} setBotData={setBotData} />
             </div>
+            {itemsNotLoaded && (
+              <em>
+                <h1 id="loadingBots">Bot Collection Loading...</h1>
+              </em>
+            )}
           </>
         )}
         {viewBotDetailsBool ? (
