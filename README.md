@@ -1,6 +1,12 @@
 ## BATTLE OF THE BOTTS
 
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
 Welcome to Battle of the Bots! This is a React web application where you can custom build your own Bot Army and enlist bots to conquer the galaxy! The app allows you to browse through a list of robots, view their details, and recruit them into your army.
+</br>
+
 <img src="./src/Images/BattleoftheBots.png">
 
 # Features
